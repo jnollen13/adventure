@@ -104,6 +104,13 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.enemylvl4, function (sprite, oth
         statusbar5.value += randint(-2, -4)
     }
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile13`, function (sprite, location) {
+    if (controller.A.isPressed()) {
+        tiles.setWallAt(tiles.getTileLocation(13, 14), false)
+        tiles.setTileAt(tiles.getTileLocation(1, 31), sprites.dungeon.greenSwitchUp)
+        tiles.setTileAt(tiles.getTileLocation(13, 14), sprites.dungeon.stairLadder)
+    }
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`Gold-sellers steps`, function (sprite, location) {
     if (controller.A.isPressed()) {
         game.showLongText("you want gold?", DialogLayout.Bottom)
@@ -122,6 +129,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`Gold-sellers steps`, function
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile4`, function (sprite, location) {
     tiles.setCurrentTilemap(tilemap`level42`)
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 1))
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.swamp.swampTile3, function (sprite, location) {
     game.showLongText("get ready for a boss fight", DialogLayout.Full)
@@ -220,6 +228,12 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.teleportdoor00, function (sprite
     tiles.placeOnRandomTile(mySprite, sprites.dungeon.floorLight5)
     mySprite2 = sprites.create(assets.image`door1`, SpriteKind.door3)
     tiles.placeOnTile(mySprite2, tiles.getTileLocation(8, 5))
+})
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.purpleSwitchDown, function (sprite, location) {
+    if (controller.A.isPressed()) {
+        tiles.placeOnTile(mySprite, tiles.getTileLocation(6, 8))
+        tiles.setCurrentTilemap(tilemap`level45`)
+    }
 })
 statusbars.onZero(StatusBarKind.EnemyHealth, function (status) {
     sprites.destroy(mySprite4)
@@ -388,6 +402,7 @@ statusbars.onZero(StatusBarKind.bosshealth2, function (status) {
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.door2, function (sprite, otherSprite) {
     sprites.destroyAllSpritesOfKind(SpriteKind.door2)
+    sprites.destroyAllSpritesOfKind(SpriteKind.person, effects.smiles, 100)
     tiles.setCurrentTilemap(tilemap`lvl 4`)
     tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 6))
     mySprite4 = sprites.create(assets.image`monster snake lvl 4`, SpriteKind.enemynormal)
@@ -400,6 +415,12 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairLarge, function (spr
     game.splash("you escaped the spirits lair", "and moved on to level 2")
     tiles.setCurrentTilemap(tilemap`level-2 sky forest`)
     mainhealth.value += 24
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile14`, function (sprite, location) {
+    if (controller.A.isPressed()) {
+        tiles.setTileAt(tiles.getTileLocation(6, 9), sprites.dungeon.greenSwitchUp)
+        tiles.setTileAt(tiles.getTileLocation(6, 0), sprites.dungeon.doorOpenSouth)
+    }
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.collectibleInsignia, function (sprite, location) {
     if (controller.A.isPressed()) {
