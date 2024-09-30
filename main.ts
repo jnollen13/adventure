@@ -38,6 +38,10 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.enemysightrange, function (sprit
     mySprite4.follow(mySprite, 36)
     sprites.destroy(mySprite7, effects.disintegrate, 500)
 })
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorOpenSouth, function (sprite, location) {
+    tiles.setCurrentTilemap(tilemap`level1`)
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(29, 0))
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`blacksmiths sign`, function (sprite, location) {
     if (controller.A.isPressed()) {
         game.showLongText("The sign says: blacksmith’s shop.", DialogLayout.Bottom)
@@ -256,6 +260,11 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.greenSwitchDown, function
 })
 statusbars.onZero(StatusBarKind.Health, function (status) {
     game.gameOver(false)
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile16`, function (sprite, location) {
+    mainhealth.value += -9
+    tiles.setWallAt(tiles.getTileLocation(28, 10), true)
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(27, 10))
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`small grass`, function (sprite, location) {
     game.splash("have fun out there")
