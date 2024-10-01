@@ -13,6 +13,10 @@ namespace SpriteKind {
     export const door3 = SpriteKind.create()
     export const bossstage2 = SpriteKind.create()
     export const teleportdoor00 = SpriteKind.create()
+    export const knight = SpriteKind.create()
+    export const camrea_anamamtion = SpriteKind.create()
+    export const house = SpriteKind.create()
+    export const door4 = SpriteKind.create()
 }
 namespace StatusBarKind {
     export const enemyhealth1 = StatusBarKind.create()
@@ -39,8 +43,60 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.enemysightrange, function (sprit
     sprites.destroy(mySprite7, effects.disintegrate, 500)
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorOpenSouth, function (sprite, location) {
-    tiles.setCurrentTilemap(tilemap`level1`)
+    tiles.setCurrentTilemap(tilemap`knights camp`)
     tiles.placeOnTile(mySprite, tiles.getTileLocation(29, 0))
+    mySprite9 = sprites.create(img`
+        ....................e2e22e2e....................
+        .................222eee22e2e222.................
+        ..............222e22e2e22eee22e222..............
+        ...........e22e22eeee2e22e2eeee22e22e...........
+        ........eeee22e22e22e2e22e2e22e22e22eeee........
+        .....222e22e22eeee22e2e22e2e22eeee22e22e222.....
+        ...22eeee22e22e22e22eee22eee22e22e22e22eeee22...
+        4cc22e22e22eeee22e22e2e22e2e22e22eeee22e22e22cc4
+        6c6eee22e22e22e22e22e2e22e2e22e22e22e22e22eee6c6
+        46622e22eeee22e22eeee2e22e2eeee22e22eeee22e22664
+        46622e22e22e22eeee22e2e22e2e22eeee22e22e22e22664
+        4cc22eeee22e22e22e22eee22eee22e22e22e22eeee22cc4
+        6c622e22e22eeee22e22e2e22e2e22e22eeee22e22e226c6
+        466eee22e22e22e22e22e2e22e2e22e22e22e22e22eee664
+        46622e22eeee22e22e22e2e22e2e22e22e22eeee22e22664
+        4cc22e22e22e22e22eeee2e22e2eeee22e22e22e22e22cc4
+        6c622eeee22e22eeee22eee22eee22eeee22e22eeee226c6
+        46622e22e22eeee22e22e2e22e2e22e22eeee22e22e22664
+        466eee22e22e22e22e22e2e22e2e22e22e22e22e22eee664
+        4cc22e22eeee22e22e22e2e22e2e22e22e22eeee22e22cc4
+        6c622e22e22e22e22e22eee22eee22e22e22e22e22e226c6
+        46622eeee22e22e22eeecc6666cceee22e22e22eeee22664
+        46622e22e22e22eeecc6666666666cceee22e22e22e22664
+        4cceee22e22eeecc66666cccccc66666cceee22e22eeecc4
+        6c622e22eeecc66666cc64444446cc66666cceee22e226c6
+        46622e22cc66666cc64444444444446cc66666cc22e22664
+        46622cc6666ccc64444444444444444446ccc6666cc22664
+        4ccc6666ccc6444bcc666666666666ccb4446ccc6666ccc4
+        cccccccc6666666cb44444444444444bc6666666cccccccc
+        64444444444446c444444444444444444c64444444444446
+        66cb444444444cb411111111111111114bc444444444bc66
+        666cccccccccccd166666666666666661dccccccccccc666
+        6666444444444c116eeeeeeeeeeeeee611c4444444446666
+        666e2222222e4c16e4e44e44e44e44ee61c4e2222222e666
+        666eeeeeeeee4c16e4e44e44e44e44ee61c4eeeeeeeee666
+        666eddddddde4c66f4e4e999999e44ee66c4eddddddde666
+        666ed55d55de4c66f4e99999999994ee66c4ed55d55de666
+        666ed44d44de4c66f4e9999999999eee66c4ed44d44de666
+        666eddddddde4c66f4eeeeeeeeeeeeee66c4eddddddde666
+        666ed55d55de4c66e4e44e44e44e44ee66c4ed55d55de666
+        c66ed44d44de4c66e4e44e44e44e44ee66c4ed44d44de66c
+        c666666666664c66e4e44e44e44feeee66c466666666666c
+        cc66444444444c66e4e44e44e44ffffe66c44444444466cc
+        .c664eee4eee4c66f4e44e44e44f44fe66c4eee4eee466c.
+        ..c64eee4eee4c66f4e44e44e44effee66c4eee4eee46c..
+        ...c644444444c66f4e44e44e44e44ee66c4444444446...
+        .....64eee444c66f4e44e44e44e44ee66c444eee446....
+        ......6ccc666c66e4e44e44e44e44ee66c666ccc66.....
+        `, SpriteKind.house)
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(15, 5))
+    mySprite2 = sprites.create(assets.image`doorup`, SpriteKind.door4)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`blacksmiths sign`, function (sprite, location) {
     if (controller.A.isPressed()) {
@@ -67,6 +123,28 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`Food-steps`, function (sprite
         game.showLongText("stop that!", DialogLayout.Bottom)
         mySprite.y += 10
     }
+})
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite.setImage(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . e e e . . . . e e e 
+        . . . . . . c d d c . . c d d c 
+        . . . . . . c b d d f f d d b c 
+        . . . . . . c 3 b d b d d b 3 c 
+        . . . . . . f b 3 d d d d 3 b f 
+        . . . . . . e d d d d d d d d e 
+        . . b f b . e d 2 f d d f 2 d e 
+        . . f d f . f d d d d d d d d f 
+        . . f d f f b 2 d d b b d d b f 
+        . . f b d b b d 2 2 2 2 2 2 f . 
+        . . . f f f f d d d d d d d f . 
+        . . . . . . . f d f d f f d b b 
+        . . . . . . . f f f f f f b b . 
+        . . . . . . . . . . . . . b . b 
+        . . . . . . . . . . . . . . . . 
+        `)
+    pause(487)
+    mySprite.setImage(assets.image`cat`)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`food sign`, function (sprite, location) {
     if (controller.A.isPressed()) {
@@ -265,6 +343,46 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile16`, function (sprite, 
     mainhealth.value += -9
     tiles.setWallAt(tiles.getTileLocation(28, 10), true)
     tiles.placeOnTile(mySprite, tiles.getTileLocation(27, 10))
+    mySprite6 = sprites.create(img`
+        ........................
+        .......22...............
+        ......2222..............
+        .....eeeeee.............
+        ....e222222e............
+        ...ebffbbffbe...........
+        ....bbbbbbbb........ccc.
+        ...efbfbbfbfe......cddc.
+        ...efbfbbfbfe.....cddc..
+        ..ee4ddbbdd4ee..ccddc...
+        .d.eb4dddd4ee..ecddc....
+        .bebee4444eeb.ddccc.....
+        .be4.bbbbbb.1bdde.......
+        .c...bbbbbb.b4beb.......
+        .....dbbbbd.............
+        .....bb..bb.............
+        .....bb..bb.............
+        .....dd..dd.............
+        ........................
+        ........................
+        ........................
+        ........................
+        ........................
+        ........................
+        `, SpriteKind.knight)
+    tiles.placeOnTile(mySprite6, tiles.getTileLocation(7, 2))
+    mySprite7 = sprites.create(assets.image`camra`, SpriteKind.camrea_anamamtion)
+    tiles.placeOnTile(mySprite7, tiles.getTileLocation(27, 10))
+    scene.cameraFollowSprite(statusbar7)
+    pause(100)
+    mySprite7.follow(mySprite6)
+    pause(1000)
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(7, 4))
+    game.showLongText("Oh! hi kitty! ", DialogLayout.Bottom)
+    game.showLongText("so you came from a dungeon? once the other knights get back, we will seal it up.", DialogLayout.Bottom)
+    pause(100)
+    sprites.destroy(mySprite7)
+    scene.cameraFollowSprite(mySprite)
+    seal_Hole = 1
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`small grass`, function (sprite, location) {
     game.splash("have fun out there")
@@ -408,6 +526,7 @@ statusbars.onZero(StatusBarKind.bosshealth2, function (status) {
     game.splash("stage 2 Boss defeted")
     tiles.setCurrentTilemap(tilemap`level40`)
     tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 0))
+    mainhealth.value = 100
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.door2, function (sprite, otherSprite) {
     sprites.destroyAllSpritesOfKind(SpriteKind.door2)
@@ -419,6 +538,21 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.door2, function (sprite, otherSp
     statusbar6 = statusbars.create(12, 3, StatusBarKind.Enemyhealth0)
     statusbar6.attachToSprite(mySprite4)
     statusbar6.value = 24
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.door4, function (sprite, otherSprite) {
+    tiles.setCurrentTilemap(tilemap`level40`)
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 40))
+    if (seal_Hole == 1) {
+        tiles.setTileAt(tiles.getTileLocation(75, 9), sprites.castle.tileGrass3)
+        tiles.setTileAt(tiles.getTileLocation(75, 8), sprites.castle.tileGrass3)
+        tiles.setTileAt(tiles.getTileLocation(75, 10), sprites.castle.tileGrass3)
+        tiles.setTileAt(tiles.getTileLocation(74, 9), sprites.castle.tileGrass3)
+        tiles.setTileAt(tiles.getTileLocation(76, 9), sprites.castle.tileGrass3)
+        tiles.setTileAt(tiles.getTileLocation(0, 0), sprites.castle.tileGrass3)
+        tiles.setTileAt(tiles.getTileLocation(0, 0), sprites.castle.tileGrass3)
+        tiles.setTileAt(tiles.getTileLocation(0, 0), sprites.castle.tileGrass3)
+        tiles.setTileAt(tiles.getTileLocation(0, 0), sprites.castle.tileGrass3)
+    }
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairLarge, function (sprite, location) {
     game.splash("you escaped the spirits lair", "and moved on to level 2")
@@ -451,7 +585,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 let mySprite3: Sprite = null
 let statusbar2: StatusBarSprite = null
 let statusbar3: StatusBarSprite = null
-let mySprite2: Sprite = null
+let seal_Hole = 0
 let statusbar6: StatusBarSprite = null
 let statusbar4: StatusBarSprite = null
 let statusbar5: StatusBarSprite = null
@@ -459,6 +593,8 @@ let mySprite8: Sprite = null
 let mySprite6: Sprite = null
 let mySprite5: Sprite = null
 let statusbar7: StatusBarSprite = null
+let mySprite2: Sprite = null
+let mySprite9: Sprite = null
 let mySprite7: Sprite = null
 let mySprite4: Sprite = null
 let claw_extenders = 0
