@@ -42,6 +42,7 @@ sprites.onOverlap(SpriteKind.enemylvl4, SpriteKind.Player, function (sprite, oth
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Charlie, function (sprite, otherSprite) {
     if (controller.A.isPressed()) {
         statusbar.value += -10
+        tiles.setCurrentTilemap(tilemap`teleporter map`)
     }
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.enemysightrange, function (sprite, otherSprite) {
@@ -340,7 +341,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.house, function (sprite, otherSp
         sprites.destroy(mySprite6)
         tiles.setCurrentTilemap(tilemap`Charlies_shop`)
         mySprite2 = sprites.create(assets.image`charlie`, SpriteKind.Charlie)
-        tiles.placeOnTile(statusbar2, tiles.getTileLocation(4, 1))
+        tiles.placeOnTile(mySprite2, tiles.getTileLocation(4, 1))
+        tiles.placeOnTile(mySprite, tiles.getTileLocation(4, 7))
     }
 })
 statusbars.onZero(StatusBarKind.EnemyHealth, function (status) {
@@ -409,6 +411,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile16`, function (sprite, 
     sprites.destroy(mySprite7)
     scene.cameraFollowSprite(mySprite)
     seal_Hole = 1
+    statusbar.value += 50
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`small grass`, function (sprite, location) {
     game.splash("have fun out there")
@@ -617,8 +620,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     }
 })
 let mySprite3: Sprite = null
-let statusbar3: StatusBarSprite = null
 let statusbar2: StatusBarSprite = null
+let statusbar3: StatusBarSprite = null
 let seal_Hole = 0
 let statusbar6: StatusBarSprite = null
 let statusbar4: StatusBarSprite = null
