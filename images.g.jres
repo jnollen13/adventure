@@ -69,6 +69,11 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "charlie"
     },
+    "image15": {
+        "data": "hwQQABAAAAB3AAAAAHcAAAB3wAwAAAcAAAC8+/8PAAAAALxV///uBwDAW1X177sMAMC8W7Xhu/4AwFW79e/u/gBcVbXlu771wFVVteW7vvXAzFW79b9e9QDAvFu1sV/1AMBcVfX/+/VwALxV///rDwAAvMv/f+4HAADADAAHAAAABwBwdwAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "witch"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",
