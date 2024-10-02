@@ -451,6 +451,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.bossstage2, function (sprite, ot
         statusbar7.value += randint(-2, -5) + claw_extenders
     }
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile40`, function (sprite, location) {
+    tiles.setCurrentTilemap(tilemap`level67`)
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.boss_stage_1, function (sprite, otherSprite) {
     if (controller.B.isPressed()) {
         statusbar4.value += -3
