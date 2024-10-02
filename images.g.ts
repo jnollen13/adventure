@@ -652,6 +652,25 @@ d d d d d d d d d d d d d d d d
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `;
+            case "image14":
+            case "charlie":return img`
+. . . . f f f f . . . . . 
+. . f f f f f f f f . . . 
+. f f f f f f c f f f . . 
+f f f f f f c c f f f c . 
+f f f c f f f f f f f c . 
+c c c f f f 4 4 4 f c c . 
+f f f f f 4 4 f f c c f . 
+f f f b f 4 4 f b f f f . 
+. f d 1 f d d f 1 d f . . 
+. f d d d d d d d d f . . 
+. f f f e e e e f f f . . 
+4 4 f e 2 2 2 2 e f 4 4 . 
+4 d f 2 2 2 2 2 2 f d 4 . 
+4 4 f e e e e e e f 4 4 . 
+. . . f f f f f f . . . . 
+. . . f f . . f f . . . . 
+`;
         }
         return null;
     })

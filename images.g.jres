@@ -64,6 +64,11 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "doorup"
     },
+    "image14": {
+        "data": "hwQNABAAAAAA8M//AEBEAAD/z///T00A8P/P/93//wDw//y/0e/i///////fLuL/////RN0u4g//z09E3S7iD//MT//fLuL/8P9Pv9Hv4v/w///83f//AAD/z/z/T00AAMDM/wBARAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "charlie"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",

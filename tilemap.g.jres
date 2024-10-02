@@ -400,6 +400,12 @@
         "tilemapTile": true,
         "displayName": "myTile21"
     },
+    "tile67": {
+        "data": "hwQQABAAAADKzMzMzMzMzL3cvd3dy927vdy93d3L3bu9vMu7u8vdu738////z927vcz////P3bu9zP///8/du738////z927vfz////P3bu9/P///8/du738////z927vfz////P3bu9vMu7u8vdu73cvd3dy927vdy93d3L3bvKzMzMzMzMzA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true,
+        "displayName": "myTile22"
+    },
     "level3": {
         "id": "level3",
         "mimeType": "application/mkcd-tilemap",
@@ -1295,29 +1301,6 @@
         ],
         "displayName": "level53"
     },
-    "level1": {
-        "id": "level1",
-        "mimeType": "application/mkcd-tilemap",
-        "data": "MTAxZTAwMTMwMDA2MDYwNjA2MDYwNjA2MDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDEwNDA2MDYwNjA4MDYwNjA2MDIwMjAyMDIwMjAyMDIwMjAyMDIwNDAyMDIwMjAyMDIwNDAyMDIwMjAyMDEwNDA2MDYwNjA3MDYwNjA2MDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDEwNDA1MDUwNTA1MDUwNTA1MDIwMjAyMDIwNDAyMDIwMjAyMDIwMjAyMDIwMjAyMDQwMjAyMDIwMjAyMDEwNDAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDEwNDAyMDIwMjAyMDIwMjAyMDQwMjAyMDQwMjAyMDIwMjAyMDQwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDEwNDAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjA0MDIwMjAyMDIwMjA0MDIwMjAyMDEwNDAyMDIwNDAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDEwNDAyMDQwMjAyMDIwYjAyMDIwNDAyMDIwMjAyMDIwMjA0MDIwMjAyMDIwMjAyMDIwNDAyMDIwMjAyMDEwNDAyMDIwMjAyMDkwYzBhMDIwMjAyMDIwMjAyMDIwMjAyMDIwNDAyMDIwMjAyMDIwMjAyMDIwMjAyMDEwNDAyMDIwMjA5MGMwYzBjMGEwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjA0MDIwMjAyMDIwMjAyMDMwNDAyMDIwOTBjMGMwYzBjMGMwYTAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDQwMjAyMDEwNDAyMDIwNjA2MDYwNjA2MDYwNjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDEwNDAyMDQwNjA2MDYwODA2MDYwNjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwNDAyMDIwMjAyMDIwMjAyMDEwNDAyMDIwNjA2MDYwNzA2MDYwNjAyMDIwMjAyMDIwMjA0MDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDEwNDAyMDIwZDBkMGQwZDBkMGQwZDAyMDIwNDAyMDQwMjA0MDIwMjAyMDIwMjA0MDIwMjAyMDIwMjAyMDEwNDAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwNDAyMDIwMjA0MDIwMjAyMDIwMjAyMDEwNDA0MDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDEwNDAyMDIwMjAyMDIwMjAyMDIwMjAyMDQwMjA0MDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDEwNDIyMjIyMjAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjIyMjIyMjAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjIyMjIyMjAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAyMjAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMjAyMjIyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjIyMjIyMDIwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMjIyMjIyMDIwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMjIyMjIyMDIwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMjIyMjIyMDIwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMg==",
-        "tileset": [
-            "myTiles.transparency16",
-            "myTiles.tile58",
-            "sprites.castle.tileGrass3",
-            "myTiles.tile59",
-            "sprites.castle.tileGrass1",
-            "myTiles.tile19",
-            "sprites.builtin.brick",
-            "myTiles.tile61",
-            "myTiles.tile62",
-            "myTiles.tile63",
-            "myTiles.tile64",
-            "myTiles.tile65",
-            "sprites.dungeon.floorLightMoss",
-            "sprites.castle.tileGrass2",
-            "myTiles.tile66"
-        ],
-        "displayName": "knights camp"
-    },
     "level54": {
         "id": "level54",
         "mimeType": "application/mkcd-tilemap",
@@ -1368,6 +1351,64 @@
             "sprites.castle.tilePath9"
         ],
         "displayName": "level40"
+    },
+    "level1": {
+        "id": "level1",
+        "mimeType": "application/mkcd-tilemap",
+        "data": "MTAxZTAwMTMwMDA2MDYwNjA2MDYwNjA2MDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDEwNDA2MDYwNjA4MDYwNjA2MDIwMjAyMDIwMjAyMDIwMjAyMDIwNDAyMDIwMjAyMDIwNDAyMDIwMjAyMDEwNDA2MDYwNjA3MDYwNjA2MDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDEwNDA1MDUwNTA1MDUwNTA1MDIwMjAyMDIwNDAyMDIwMjAyMDIwMjAyMDIwMjAyMDQwMjAyMDIwMjAyMDEwNDAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDEwNDAyMDIwMjAyMDIwMjAyMDQwMjAyMDQwMjAyMDIwMjAyMDQwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDEwNDAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjA0MDIwMjAyMDIwMjA0MDIwMjAyMDEwNDAyMDIwNDAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDEwNDAyMDQwMjAyMDIwYjAyMDIwNDAyMDIwMjAyMDIwMjA0MDIwMjAyMDIwMjAyMDIwNDAyMDIwMjAyMDEwNDAyMDIwMjAyMDkwYzBhMDIwMjAyMDIwMjAyMDIwMjAyMDIwNDAyMDIwMjAyMDIwMjAyMDIwMjAyMDEwNDAyMDIwMjA5MGMwYzBjMGEwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjA0MDIwMjAyMDIwMjAyMDMwNDAyMDIwOTBjMGMwYzBjMGMwYTAyMDIwMjE0MTUwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDQwMjAyMDEwNDAyMDIwNjA2MDYwNjA2MDYwNjAyMDIwMjBmMTMwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDEwNDAyMDQwNjA2MDYwODA2MDYwNjAyMDIwMjBmMTMwMjAyMDIwMjAyMDIwNDAyMDIwMjAyMDIwMjAyMDEwNDAyMDIwNjA2MDYwNzA2MDYwNjAyMDIwMjBmMTMwMjA0MDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDEwNDAyMDIwZDBkMGQwZDBkMGQwZDAyMDIwNDBmMTMwMjA0MDIwMjAyMDIwMjA0MDIwMjAyMDIwMjAyMDEwNDAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjBmMTMwMjAyMDIwNDAyMDIwMjA0MDIwMjAyMDIwMjAyMDEwNDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDBlMTMwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDEwNDExMTExMTExMTExMTExMTExMTExMTExMTExMTIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDEwNDIyMjIyMjAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjIyMjIyMjAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjIyMjIyMjAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAyMjAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMjAyMjIyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjIyMjIyMDIwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMjIyMjIyMDIwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMjIyMjIyMDIwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMjIyMjIyMDIwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMg==",
+        "tileset": [
+            "myTiles.transparency16",
+            "myTiles.tile58",
+            "sprites.castle.tileGrass3",
+            "myTiles.tile59",
+            "sprites.castle.tileGrass1",
+            "myTiles.tile19",
+            "sprites.builtin.brick",
+            "myTiles.tile61",
+            "myTiles.tile62",
+            "myTiles.tile63",
+            "myTiles.tile64",
+            "myTiles.tile65",
+            "sprites.dungeon.floorLightMoss",
+            "sprites.castle.tileGrass2",
+            "myTiles.tile11",
+            "sprites.castle.tilePath4",
+            "sprites.castle.tilePath2",
+            "sprites.castle.tilePath8",
+            "sprites.castle.tilePath9",
+            "sprites.castle.tilePath6",
+            "sprites.castle.tilePath1",
+            "sprites.castle.tilePath3"
+        ],
+        "displayName": "knights camp"
+    },
+    "level56": {
+        "id": "level56",
+        "mimeType": "application/mkcd-tilemap",
+        "data": "MTAxMDAwMTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMA==",
+        "tileset": [
+            "myTiles.transparency16"
+        ],
+        "displayName": "level56"
+    },
+    "level57": {
+        "id": "level57",
+        "mimeType": "application/mkcd-tilemap",
+        "data": "MTAwOTAwMDkwMDA5MDIwMjAyMGEwMjAyMDIwNzA1MDEwMTAxMDEwMTAxMDEwMzA1MDEwMTAxMDEwMTAxMDEwMzA1MDEwMTAxMDEwMTAxMDEwMzA1MDEwMTAxMDEwMTAxMDEwMzA1MDEwMTAxMDEwMTAxMDEwMzA1MDEwMTAxMDEwMTAxMDEwMzA1MDEwMTAxMDEwMTAxMDEwMzA4MDQwNDA0MDQwNDA0MDQwNjIyMjIyMjIyMjIwMDAwMDAyMDAyMDAwMDAwMjIwMDAwMDAyMDAyMDAwMDAwMjIwMDAwMDAyMDAyMDAwMDAwMjIwMDAwMDAyMDIyMjIyMjIyMDI=",
+        "tileset": [
+            "myTiles.transparency16",
+            "sprites.dungeon.floorLight2",
+            "sprites.dungeon.greenOuterNorth2",
+            "sprites.dungeon.greenOuterEast2",
+            "sprites.dungeon.greenOuterSouth2",
+            "sprites.dungeon.greenOuterWest2",
+            "sprites.dungeon.greenOuterSouthWest",
+            "sprites.dungeon.greenOuterNorthEast",
+            "sprites.dungeon.greenOuterSouthEast",
+            "sprites.dungeon.greenOuterNorthWest",
+            "myTiles.tile67"
+        ],
+        "displayName": "Charlies_shop"
     },
     "*": {
         "mimeType": "image/x-mkcd-f4",
