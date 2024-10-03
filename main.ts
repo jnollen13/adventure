@@ -20,7 +20,6 @@ namespace SpriteKind {
     export const Charlie = SpriteKind.create()
     export const basicenenemy = SpriteKind.create()
     export const teleport = SpriteKind.create()
-    export const teleport01 = SpriteKind.create()
 }
 namespace StatusBarKind {
     export const enemyhealth1 = StatusBarKind.create()
@@ -45,10 +44,12 @@ sprites.onOverlap(SpriteKind.enemylvl4, SpriteKind.Player, function (sprite, oth
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Charlie, function (sprite, otherSprite) {
     if (controller.A.isPressed()) {
-        statusbar.value += -10
-        sprites.destroy(mySprite2)
-        tiles.setCurrentTilemap(tilemap`teleporter map`)
-        tiles.placeOnTile(mySprite, tiles.getTileLocation(randint(0, 16), randint(0, 16)))
+        if (true) {
+            sprites.destroy(mySprite2)
+            statusbar.value += -10
+            tiles.setCurrentTilemap(tilemap`teleporter map`)
+            tiles.placeOnTile(mySprite, tiles.getTileLocation(randint(0, 16), randint(0, 16)))
+        }
     }
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile38`, function (sprite, location) {
@@ -459,7 +460,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.bossstage2, function (sprite, ot
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile40`, function (sprite, location) {
     tiles.setCurrentTilemap(tilemap`level67`)
     tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 1))
-    mySprite3 = sprites.create(assets.image`door1`, SpriteKind.teleport01)
+    mySprite3 = sprites.create(assets.image`door1`, SpriteKind.teleport)
     tiles.placeOnTile(mySprite3, tiles.getTileLocation(17, 7))
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.boss_stage_1, function (sprite, otherSprite) {
@@ -640,6 +641,10 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairLarge, function (spr
     game.splash("you escaped the spirits lair", "and moved on to level 2")
     tiles.setCurrentTilemap(tilemap`level-2 sky forest`)
     mainhealth.value += 24
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.teleport, function (sprite, otherSprite) {
+    tiles.setCurrentTilemap(tilemap`knights camp`)
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(0, randint(5, 6)))
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile14`, function (sprite, location) {
     if (controller.A.isPressed()) {
