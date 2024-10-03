@@ -54,7 +54,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Charlie, function (sprite, other
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile38`, function (sprite, location) {
     tiles.setCurrentTilemap(tilemap`level63`)
-    tiles.placeOnTile(mySprite, tiles.getTileLocation(4, 15))
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(15, 1))
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.enemysightrange, function (sprite, otherSprite) {
     mySprite4.follow(mySprite, 36)
@@ -212,6 +212,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile34`, function (sprite, 
     tiles.placeOnTile(mySprite4, tiles.getTileLocation(18, 5))
     mySprite4.follow(mySprite, 49)
     mySprite3 = sprites.create(assets.image`door1`, SpriteKind.teleport)
+    tiles.placeOnTile(mySprite3, tiles.getTileLocation(31, 5))
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.enemylvl4, function (sprite, otherSprite) {
     if (controller.B.isPressed()) {
@@ -340,6 +341,8 @@ scene.onOverlapTile(SpriteKind.Player, sprites.castle.shrub, function (sprite, l
 controller.combos.attachCombo("AA+B", function () {
     tiles.setCurrentTilemap(tilemap`level45`)
     tiles.placeOnTile(mySprite, tiles.getTileLocation(6, 8))
+    claw_extenders = -698
+    statusbar.value = 333
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.teleportdoor00, function (sprite, otherSprite) {
     tiles.setCurrentTilemap(tilemap`level38`)
@@ -394,6 +397,12 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.greenSwitchDown, function
         tiles.setWallAt(tiles.getTileLocation(8, 6), false)
         tiles.setWallAt(tiles.getTileLocation(9, 6), false)
     }
+})
+scene.onOverlapTile(SpriteKind.Player, sprites.builtin.oceanSand9, function (sprite, location) {
+    tiles.setCurrentTilemap(tilemap`forest maze`)
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 0))
+    mySprite3 = sprites.create(assets.image`door1`, SpriteKind.teleport)
+    tiles.placeOnTile(mySprite3, tiles.getTileLocation(19, 19))
 })
 statusbars.onZero(StatusBarKind.Health, function (status) {
     game.gameOver(false)
@@ -725,8 +734,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.teleport, function (sprite, othe
         ........................
         ........................
         `, SpriteKind.knight)
-    tiles.placeOnTile(mySprite9, tiles.getTileLocation(0, 0))
-    tiles.placeOnTile(mySprite6, tiles.getTileLocation(0, 0))
+    tiles.placeOnTile(mySprite9, tiles.getTileLocation(15, 5))
+    tiles.placeOnTile(mySprite6, tiles.getTileLocation(7, 2))
+    sprites.destroyAllSpritesOfKind(SpriteKind.teleport)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile14`, function (sprite, location) {
     if (controller.A.isPressed()) {
