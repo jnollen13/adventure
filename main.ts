@@ -337,6 +337,10 @@ scene.onOverlapTile(SpriteKind.Player, sprites.castle.shrub, function (sprite, l
         tiles.placeOnRandomTile(mySprite, sprites.castle.shrub)
     }
 })
+controller.combos.attachCombo("AA+B", function () {
+    tiles.setCurrentTilemap(tilemap`level45`)
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(6, 8))
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.teleportdoor00, function (sprite, otherSprite) {
     tiles.setCurrentTilemap(tilemap`level38`)
     sprites.destroyAllSpritesOfKind(SpriteKind.teleportdoor00)
@@ -461,7 +465,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile40`, function (sprite, 
     tiles.setCurrentTilemap(tilemap`level67`)
     tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 1))
     mySprite3 = sprites.create(assets.image`door1`, SpriteKind.teleport)
-    tiles.placeOnTile(mySprite3, tiles.getTileLocation(17, 7))
+    tiles.placeOnTile(mySprite3, tiles.getTileLocation(17, 17))
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.boss_stage_1, function (sprite, otherSprite) {
     if (controller.B.isPressed()) {
@@ -624,15 +628,15 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.door4, function (sprite, otherSp
     sprites.destroyAllSpritesOfKind(SpriteKind.door4)
     if (seal_Hole == 1) {
         tiles.placeOnTile(mySprite6, tiles.getTileLocation(77, 9))
-        tiles.setTileAt(tiles.getTileLocation(75, 9), sprites.castle.tileGrass3)
-        tiles.setTileAt(tiles.getTileLocation(75, 8), sprites.castle.tileGrass3)
-        tiles.setTileAt(tiles.getTileLocation(75, 10), sprites.castle.tileGrass3)
-        tiles.setTileAt(tiles.getTileLocation(74, 9), sprites.castle.tileGrass3)
-        tiles.setTileAt(tiles.getTileLocation(76, 9), sprites.castle.tileGrass3)
-        tiles.setTileAt(tiles.getTileLocation(74, 8), sprites.castle.tileGrass3)
-        tiles.setTileAt(tiles.getTileLocation(76, 8), sprites.castle.tileGrass3)
-        tiles.setTileAt(tiles.getTileLocation(76, 10), sprites.castle.tileGrass3)
-        tiles.setTileAt(tiles.getTileLocation(74, 10), sprites.castle.tileGrass3)
+        tiles.setTileAt(tiles.getTileLocation(75, 9), sprites.castle.tileGrass1)
+        tiles.setTileAt(tiles.getTileLocation(75, 8), sprites.castle.tileGrass1)
+        tiles.setTileAt(tiles.getTileLocation(75, 10), sprites.castle.tileGrass1)
+        tiles.setTileAt(tiles.getTileLocation(74, 9), sprites.castle.tileGrass2)
+        tiles.setTileAt(tiles.getTileLocation(76, 9), sprites.castle.tileGrass1)
+        tiles.setTileAt(tiles.getTileLocation(74, 8), sprites.castle.tileGrass1)
+        tiles.setTileAt(tiles.getTileLocation(76, 8), sprites.castle.tileGrass1)
+        tiles.setTileAt(tiles.getTileLocation(76, 10), sprites.castle.tileGrass1)
+        tiles.setTileAt(tiles.getTileLocation(74, 10), sprites.castle.tileGrass1)
     } else {
         sprites.destroy(mySprite6)
     }
@@ -645,6 +649,84 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairLarge, function (spr
 sprites.onOverlap(SpriteKind.Player, SpriteKind.teleport, function (sprite, otherSprite) {
     tiles.setCurrentTilemap(tilemap`knights camp`)
     tiles.placeOnTile(mySprite, tiles.getTileLocation(0, randint(5, 6)))
+    mySprite9 = sprites.create(img`
+        ....................e2e22e2e....................
+        .................222eee22e2e222.................
+        ..............222e22e2e22eee22e222..............
+        ...........e22e22eeee2e22e2eeee22e22e...........
+        ........eeee22e22e22e2e22e2e22e22e22eeee........
+        .....222e22e22eeee22e2e22e2e22eeee22e22e222.....
+        ...22eeee22e22e22e22eee22eee22e22e22e22eeee22...
+        4cc22e22e22eeee22e22e2e22e2e22e22eeee22e22e22cc4
+        6c6eee22e22e22e22e22e2e22e2e22e22e22e22e22eee6c6
+        46622e22eeee22e22eeee2e22e2eeee22e22eeee22e22664
+        46622e22e22e22eeee22e2e22e2e22eeee22e22e22e22664
+        4cc22eeee22e22e22e22eee22eee22e22e22e22eeee22cc4
+        6c622e22e22eeee22e22e2e22e2e22e22eeee22e22e226c6
+        466eee22e22e22e22e22e2e22e2e22e22e22e22e22eee664
+        46622e22eeee22e22e22e2e22e2e22e22e22eeee22e22664
+        4cc22e22e22e22e22eeee2e22e2eeee22e22e22e22e22cc4
+        6c622eeee22e22eeee22eee22eee22eeee22e22eeee226c6
+        46622e22e22eeee22e22e2e22e2e22e22eeee22e22e22664
+        466eee22e22e22e22e22e2e22e2e22e22e22e22e22eee664
+        4cc22e22eeee22e22e22e2e22e2e22e22e22eeee22e22cc4
+        6c622e22e22e22e22e22eee22eee22e22e22e22e22e226c6
+        46622eeee22e22e22eeecc6666cceee22e22e22eeee22664
+        46622e22e22e22eeecc6666666666cceee22e22e22e22664
+        4cceee22e22eeecc66666cccccc66666cceee22e22eeecc4
+        6c622e22eeecc66666cc64444446cc66666cceee22e226c6
+        46622e22cc66666cc64444444444446cc66666cc22e22664
+        46622cc6666ccc64444444444444444446ccc6666cc22664
+        4ccc6666ccc6444bcc666666666666ccb4446ccc6666ccc4
+        cccccccc6666666cb44444444444444bc6666666cccccccc
+        64444444444446c444444444444444444c64444444444446
+        66cb444444444cb411111111111111114bc444444444bc66
+        666cccccccccccd166666666666666661dccccccccccc666
+        6666444444444c116eeeeeeeeeeeeee611c4444444446666
+        666e2222222e4c16e4e44e44e44e44ee61c4e2222222e666
+        666eeeeeeeee4c16e4e44e44e44e44ee61c4eeeeeeeee666
+        666eddddddde4c66f4e4e999999e44ee66c4eddddddde666
+        666ed55d55de4c66f4e99999999994ee66c4ed55d55de666
+        666ed44d44de4c66f4e9999999999eee66c4ed44d44de666
+        666eddddddde4c66f4eeeeeeeeeeeeee66c4eddddddde666
+        666ed55d55de4c66e4e44e44e44e44ee66c4ed55d55de666
+        c66ed44d44de4c66e4e44e44e44e44ee66c4ed44d44de66c
+        c666666666664c66e4e44e44e44feeee66c466666666666c
+        cc66444444444c66e4e44e44e44ffffe66c44444444466cc
+        .c664eee4eee4c66f4e44e44e44f44fe66c4eee4eee466c.
+        ..c64eee4eee4c66f4e44e44e44effee66c4eee4eee46c..
+        ...c644444444c66f4e44e44e44e44ee66c4444444446...
+        .....64eee444c66f4e44e44e44e44ee66c444eee446....
+        ......6ccc666c66e4e44e44e44e44ee66c666ccc66.....
+        `, SpriteKind.house)
+    mySprite6 = sprites.create(img`
+        ........................
+        .......22...............
+        ......2222..............
+        .....eeeeee.............
+        ....e222222e............
+        ...ebffbbffbe...........
+        ....bbbbbbbb........ccc.
+        ...efbfbbfbfe......cddc.
+        ...efbfbbfbfe.....cddc..
+        ..ee4ddbbdd4ee..ccddc...
+        .d.eb4dddd4ee..ecddc....
+        .bebee4444eeb.ddccc.....
+        .be4.bbbbbb.1bdde.......
+        .c...bbbbbb.b4beb.......
+        .....dbbbbd.............
+        .....bb..bb.............
+        .....bb..bb.............
+        .....dd..dd.............
+        ........................
+        ........................
+        ........................
+        ........................
+        ........................
+        ........................
+        `, SpriteKind.knight)
+    tiles.placeOnTile(mySprite9, tiles.getTileLocation(0, 0))
+    tiles.placeOnTile(mySprite6, tiles.getTileLocation(0, 0))
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile14`, function (sprite, location) {
     if (controller.A.isPressed()) {
