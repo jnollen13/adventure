@@ -633,25 +633,6 @@ f b d b b d d d d d d b f .
 . . . f d f f d f f f d f . 
 . . . f f . . f f . . f f . 
 `;
-            case "image2":
-            case "doorup":return img`
-f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f 
-d d d d d d d d d d d d d d d d 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`;
             case "image14":
             case "charlie":return img`
 . . . . f f f f . . . . . 
@@ -689,6 +670,25 @@ f f f b f 4 4 f b f f f .
 . . . e b b e b b 5 5 f e e . . 
 . . . 7 c e e 5 5 5 5 5 f 7 . . 
 . . . . . f f f f f f f . . . . 
+`;
+            case "image2":
+            case "doorup":return img`
+f f d . . . . . . . . . . . . . 
+f f d . . . . . . . . . . . . . 
+f f d . . . . . . . . . . . . . 
+f f d . . . . . . . . . . . . . 
+f f d . . . . . . . . . . . . . 
+f f d . . . . . . . . . . . . . 
+f f d . . . . . . . . . . . . . 
+f f d . . . . . . . . . . . . . 
+f f d . . . . . . . . . . . . . 
+f f d . . . . . . . . . . . . . 
+f f d . . . . . . . . . . . . . 
+f f d . . . . . . . . . . . . . 
+f f d . . . . . . . . . . . . . 
+f f d . . . . . . . . . . . . . 
+f f d . . . . . . . . . . . . . 
+f f d . . . . . . . . . . . . . 
 `;
         }
         return null;

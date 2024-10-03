@@ -59,11 +59,6 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "cat"
     },
-    "image2": {
-        "data": "hwQQABAAAAD/DQAAAAAAAP8NAAAAAAAA/w0AAAAAAAD/DQAAAAAAAP8NAAAAAAAA/w0AAAAAAAD/DQAAAAAAAP8NAAAAAAAA/w0AAAAAAAD/DQAAAAAAAP8NAAAAAAAA/w0AAAAAAAD/DQAAAAAAAP8NAAAAAAAA/w0AAAAAAAD/DQAAAAAAAA==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "doorup"
-    },
     "image14": {
         "data": "hwQNABAAAAAA8M//AEBEAAD/z///T00A8P/P/93//wDw//y/0e/i///////fLuL/////RN0u4g//z09E3S7iD//MT//fLuL/8P9Pv9Hv4v/w///83f//AAD/z/z/T00AAMDM/wBARAAAAAAAAAAAAA==",
         "mimeType": "image/x-mkcd-f4",
@@ -73,6 +68,11 @@
         "data": "hwQQABAAAAB3AAAAAHcAAAB3wAwAAAcAAAC8+/8PAAAAALxV///uBwDAW1X177sMAMC8W7Xhu/4AwFW79e/u/gBcVbXlu771wFVVteW7vvXAzFW79b9e9QDAvFu1sV/1AMBcVfX/+/VwALxV///rDwAAvMv/f+4HAADADAAHAAAABwBwdwAAAA==",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "witch"
+    },
+    "image2": {
+        "data": "hwQQABAAAAD/////////////////////3d3d3d3d3d0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "doorup"
     },
     "*": {
         "mimeType": "image/x-mkcd-f4",
