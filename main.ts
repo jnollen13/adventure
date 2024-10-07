@@ -482,6 +482,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.house, function (sprite, otherSp
     if (controller.A.isPressed()) {
         sprites.destroy(mySprite2)
         sprites.destroy(mySprite9)
+        sprites.destroy(mySprite3)
         sprites.destroy(mySprite6)
         if (mapv >= 20) {
             game.splash("program error: stack overflow")
