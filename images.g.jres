@@ -74,6 +74,11 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "doorup"
     },
+    "image16": {
+        "data": "hwQYABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAACApAAAAAAAAAAAAAPD9AAAAAAAAAAAAAMDNAAAAAAAAAAAAAMDNAAAAAAAAAAAAAMDNAAAAAAAAAAAAAMDNAAAAAAAAAPD/D8zMDAAAAAAA8O/y/uAOAAAAAAAA/y7+7t7tAAAAAADwLy7v1N7tAAAAAADwIi7v1O3kDwAAAAAv/y7v/+3k/wAAAAD/7u//uy3+/wAAAADw7u/yTiT0DwAAAADw7v7y1C70DwAAAADw7v7yRC70/wAAAAAA7/7+7v7//wAAAAAA//7/7w8A/wAAAAAA8P///gAAAAAAAAAAAAD/DwAAAAAAAAA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "gladeater"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",

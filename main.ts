@@ -21,6 +21,7 @@ namespace SpriteKind {
     export const basicenenemy = SpriteKind.create()
     export const teleport = SpriteKind.create()
     export const dungenenemy01 = SpriteKind.create()
+    export const gladiater = SpriteKind.create()
 }
 namespace StatusBarKind {
     export const enemyhealth1 = StatusBarKind.create()
@@ -31,6 +32,7 @@ namespace StatusBarKind {
     export const bosshealth2 = StatusBarKind.create()
     export const basicenenemyhealth1 = StatusBarKind.create()
     export const doungenEhp01 = StatusBarKind.create()
+    export const gladiaterhp00 = StatusBarKind.create()
 }
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile0`, function (sprite, location) {
     if (controller.A.isPressed()) {
@@ -203,6 +205,13 @@ statusbars.onZero(StatusBarKind.bosshealth, function (status) {
     mySprite6.changeScale(4, ScaleAnchor.Middle)
     statusbar.value += randint(2, 9)
 })
+statusbars.onZero(StatusBarKind.gladiaterhp00, function (status) {
+    sprites.destroy(mySprite4)
+    tiles.setCurrentTilemap(tilemap`level81`)
+    mySprite2 = sprites.create(assets.image`doorup`, SpriteKind.teleport)
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 0))
+    tiles.placeOnTile(mySprite2, tiles.getTileLocation(0, 0))
+})
 statusbars.onZero(StatusBarKind.Enemyhealth0, function (status) {
     sprites.destroy(mySprite4)
     mySprite8 = sprites.create(assets.image`door1`, SpriteKind.door3)
@@ -227,12 +236,33 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.enemylvl4, function (sprite, oth
         statusbar5.value += randint(-2, -4)
     }
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile24`, function (sprite, location) {
+    tiles.setCurrentTilemap(tilemap`level79`)
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 2))
+    mySprite4 = sprites.create(assets.image`gladeater`, SpriteKind.gladiater)
+    statusbar10 = statusbars.create(20, 4, StatusBarKind.gladiaterhp00)
+    statusbar10.value = 40
+    statusbar10.attachToSprite(mySprite4)
+    mySprite4.follow(mySprite, 79)
+    tiles.placeOnTile(mySprite4, tiles.getTileLocation(18, 18))
+    statusbar10.max = 40
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile32`, function (sprite, location) {
+    tiles.setCurrentTilemap(tilemap`bush_maze`)
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 0))
+    mySprite2 = sprites.create(assets.image`door1`, SpriteKind.teleport)
+    tiles.placeOnTile(mySprite2, tiles.getTileLocation(18, 16))
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile13`, function (sprite, location) {
     if (controller.A.isPressed()) {
         tiles.setWallAt(tiles.getTileLocation(13, 14), false)
         tiles.setTileAt(tiles.getTileLocation(1, 31), sprites.dungeon.greenSwitchUp)
         tiles.setTileAt(tiles.getTileLocation(13, 14), sprites.dungeon.stairLadder)
     }
+})
+sprites.onOverlap(SpriteKind.gladiater, SpriteKind.Player, function (sprite, otherSprite) {
+    pause(randint(111, 333))
+    mainhealth.value += -1
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`Gold-sellers steps`, function (sprite, location) {
     if (controller.A.isPressed()) {
@@ -300,6 +330,9 @@ statusbars.onZero(StatusBarKind.enemyhealth3, function (status) {
     mySprite5.setImage(assets.image`person`)
     mySprite6 = sprites.create(assets.image`door1`, SpriteKind.door2)
     tiles.placeOnTile(mySprite6, tiles.getTileLocation(99, 20))
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile25`, function (sprite, location) {
+	
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.enemynormal, function (sprite, otherSprite) {
     if (controller.B.isPressed()) {
@@ -381,10 +414,15 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.house, function (sprite, otherSp
         sprites.destroy(mySprite2)
         sprites.destroy(mySprite9)
         sprites.destroy(mySprite6)
-        tiles.setCurrentTilemap(tilemap`Charlies_shop`)
-        mySprite2 = sprites.create(assets.image`charlie`, SpriteKind.Charlie)
-        tiles.placeOnTile(mySprite2, tiles.getTileLocation(4, 1))
-        tiles.placeOnTile(mySprite, tiles.getTileLocation(4, 7))
+        if (mapv >= 25) {
+            tiles.setCurrentTilemap(tilemap`level85`)
+            tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 0))
+        } else {
+            tiles.setCurrentTilemap(tilemap`Charlies_shop`)
+            mySprite2 = sprites.create(assets.image`charlie`, SpriteKind.Charlie)
+            tiles.placeOnTile(mySprite2, tiles.getTileLocation(4, 1))
+            tiles.placeOnTile(mySprite, tiles.getTileLocation(4, 7))
+        }
     }
 })
 statusbars.onZero(StatusBarKind.EnemyHealth, function (status) {
@@ -622,6 +660,11 @@ sprites.onOverlap(SpriteKind.enemylvl2, SpriteKind.Player, function (sprite, oth
     pause(110)
     mainhealth.value += -1
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.gladiater, function (sprite, otherSprite) {
+    if (controller.B.isPressed()) {
+        statusbar10.value += randint(-2, -5) + claw_extenders
+    }
+})
 sprites.onOverlap(SpriteKind.boss_stage_1, SpriteKind.Player, function (sprite, otherSprite) {
     pause(138)
     mainhealth.value += -2
@@ -761,6 +804,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.teleport, function (sprite, othe
     tiles.placeOnTile(mySprite9, tiles.getTileLocation(15, 5))
     tiles.placeOnTile(mySprite6, tiles.getTileLocation(7, 2))
     sprites.destroyAllSpritesOfKind(SpriteKind.teleport)
+    mapv += 1
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile35`, function (sprite, location) {
     tiles.setCurrentTilemap(tilemap`level75`)
@@ -801,6 +845,7 @@ let statusbar3: StatusBarSprite = null
 let seal_Hole = 0
 let statusbar6: StatusBarSprite = null
 let statusbar4: StatusBarSprite = null
+let statusbar10: StatusBarSprite = null
 let statusbar5: StatusBarSprite = null
 let mySprite3: Sprite = null
 let statusbar8: StatusBarSprite = null
@@ -812,6 +857,7 @@ let mySprite9: Sprite = null
 let mySprite7: Sprite = null
 let mySprite4: Sprite = null
 let mySprite2: Sprite = null
+let mapv = 0
 let claw_extenders = 0
 let statusbar: StatusBarSprite = null
 let mainhealth: StatusBarSprite = null
@@ -832,6 +878,7 @@ tiles.placeOnRandomTile(mySprite, assets.tile`log`)
 claw_extenders = 0
 statusbar.max = 339
 let enemy_drops = 0
+mapv = 0
 game.onUpdate(function () {
     characterAnimations.runFrames(
     mySprite,
