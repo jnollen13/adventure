@@ -79,6 +79,21 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "gladeater"
     },
+    "image17": {
+        "data": "hwQNABAAAAAAAAAAAADuAADwz////+8A8P/P/93//wDw//y/0b9n///////ffmf/////u91+Zw//z7+73X5nD//Mv//ffmf/////v9G/Z//w///83f//APD/z/z//+8AAM/M////7gAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "riker"
+    },
+    "image18": {
+        "data": "hwQQABAAAADfAAAAAAAAAN8AAAAAAAAA3wAAAAAAAADfAAAAAAAAAN8AAAAAAAAA3wAAAAAAAADfAAAAAAAAAN8AAAAAAAAA3wAAAAAAAADfAAAAAAAAAN8AAAAAAAAA3wAAAAAAAADfAAAAAAAAAN8AAAAAAAAA3wAAAAAAAADfAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "door"
+    },
+    "image19": {
+        "data": "hwQYABgAAAAAAAAAAAAAAAAAAAAAAAAAAL3LAAAAAAAAAAAA4OAOAAAAAAAAAODg7r4EAAAAAAAAAL77T+sAAAAAAAAA4PK72+S7vdsAAAAA4vL73027u9sAAAAg4rK7u027CwAAAAAg4rK7u027CwAAAAAA4vL73027u9sAAAAA4PK72+S7vdsAAAAAAL77T+4AAAAAAAAAAODg7r6xAAAAAAAAAAAA4ABLAAAAAAAAAAAAANC9AAAAAAAAAAAAAN7tAAAAAAAAAAAAwMy+AAAAAAAAAAAAwM0AAAAAAAAAAAAA3M0AAAAAAAAAAADA3QwAAAAAAAAAAADczQAAAAAAAAAAAADcDAAAAAAAAAAAAADMAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "knight"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",
