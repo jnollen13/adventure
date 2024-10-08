@@ -401,6 +401,28 @@ statusbars.onZero(StatusBarKind.enemyhealth3, function (status) {
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile25`, function (sprite, location) {
     tiles.setCurrentTilemap(tilemap`level91`)
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 1))
+    mySprite4 = sprites.create(img`
+        . 7 f f f . 7 . . . 7 . . 7 . 7 
+        f f f c c . . . 7 7 . . . f f f 
+        f f c c c . c c . . . f c b b c 
+        f f c 3 c c 3 c c f f b b b c . 
+        f f c 3 b c 3 b c f b b c c c . 
+        f c b b b b b b c f b c b c c . 
+        c c 2 4 b 4 2 b c b b c b b c . 
+        c b b b b b b b b b c c c b c 7 
+        c b 1 f f 1 c b b c c c c c . . 
+        c f 1 f f 1 f b b b b f c . . 7 
+        f f f f f f f b b b b f c . 7 . 
+        f f 2 2 2 2 f b b b b f c c . . 
+        . f 2 2 2 2 2 b b b c f . . . 7 
+        . . f 2 2 2 b b b c f . . 7 7 . 
+        . . . f f f f f f f . 7 7 . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.basicenenemy)
+    tiles.placeOnTile(mySprite4, tiles.getTileLocation(10, 3))
+    statusbar4 = statusbars.create(10, 3, StatusBarKind.basicenenemyhealth1)
+    statusbar4.attachToSprite(mySprite4)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.enemynormal, function (sprite, otherSprite) {
     if (controller.B.isPressed()) {
