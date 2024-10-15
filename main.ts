@@ -278,7 +278,7 @@ sprites.onOverlap(SpriteKind.gladiater, SpriteKind.Player, function (sprite, oth
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile46`, function (sprite, location) {
     if (controller.A.isPressed()) {
         tiles.setTileAt(tiles.getTileLocation(7, 15), assets.tile`myTile53`)
-        tiles.setTileAt(tiles.getTileLocation(0, 0), assets.tile`myTile54`)
+        tiles.setTileAt(tiles.getTileLocation(4, 15), assets.tile`myTile54`)
         tiles.setWallAt(tiles.getTileLocation(4, 15), false)
     }
 })
@@ -550,6 +550,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Eli, function (sprite, otherSpri
         game.showLongText("bye!", DialogLayout.Bottom)
         sprites.destroyAllSpritesOfKind(SpriteKind.Eli)
         tiles.setCurrentTilemap(tilemap`the prison`)
+        tiles.placeOnTile(mySprite, tiles.getTileLocation(4, 8))
     }
 })
 sprites.onOverlap(SpriteKind.bossstage2, SpriteKind.Player, function (sprite, otherSprite) {
@@ -649,16 +650,32 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`teleporter1`, function (sprit
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile59`, function (sprite, location) {
     if (controller.A.isPressed()) {
-        tiles.setWallAt(tiles.getTileLocation(0, 0), false)
-        tiles.setWallAt(tiles.getTileLocation(0, 0), false)
-        tiles.setWallAt(tiles.getTileLocation(0, 0), false)
-        tiles.setTileAt(tiles.getTileLocation(0, 0), assets.tile`transparency16`)
-        tiles.setWallAt(tiles.getTileLocation(0, 0), false)
-        tiles.setWallAt(tiles.getTileLocation(0, 0), false)
-        tiles.setWallAt(tiles.getTileLocation(0, 0), false)
-        tiles.setWallAt(tiles.getTileLocation(0, 0), false)
-        tiles.setWallAt(tiles.getTileLocation(0, 0), false)
-        tiles.setWallAt(tiles.getTileLocation(0, 0), false)
+        tiles.setWallAt(tiles.getTileLocation(2, 4), false)
+        tiles.setWallAt(tiles.getTileLocation(6, 4), false)
+        tiles.setWallAt(tiles.getTileLocation(10, 4), false)
+        tiles.setWallAt(tiles.getTileLocation(14, 4), false)
+        tiles.setWallAt(tiles.getTileLocation(18, 4), false)
+        tiles.setWallAt(tiles.getTileLocation(22, 4), false)
+        tiles.setWallAt(tiles.getTileLocation(26, 4), false)
+        tiles.setWallAt(tiles.getTileLocation(30, 4), false)
+        tiles.setWallAt(tiles.getTileLocation(34, 4), false)
+        tiles.setWallAt(tiles.getTileLocation(38, 4), false)
+        tiles.setWallAt(tiles.getTileLocation(42, 4), false)
+        tiles.setWallAt(tiles.getTileLocation(46, 4), false)
+        tiles.setWallAt(tiles.getTileLocation(49, 4), false)
+        tiles.setWallAt(tiles.getTileLocation(2, 11), false)
+        tiles.setWallAt(tiles.getTileLocation(8, 11), false)
+        tiles.setWallAt(tiles.getTileLocation(16, 11), false)
+        tiles.setWallAt(tiles.getTileLocation(24, 11), false)
+        tiles.setWallAt(tiles.getTileLocation(31, 11), false)
+        tiles.setWallAt(tiles.getTileLocation(40, 11), false)
+        tiles.setWallAt(tiles.getTileLocation(47, 11), false)
+        tiles.setTileAt(tiles.getTileLocation(47, 11), assets.tile`myTile61`)
+        tiles.setTileAt(tiles.getTileLocation(24, 11), assets.tile`myTile61`)
+        tiles.setTileAt(tiles.getTileLocation(40, 11), assets.tile`myTile61`)
+        tiles.setTileAt(tiles.getTileLocation(47, 12), assets.tile`myTile60`)
+        tiles.setTileAt(tiles.getTileLocation(0, 7), assets.tile`myTile58`)
+        tiles.setTileAt(tiles.getTileLocation(0, 8), assets.tile`myTile58`)
     }
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.villagedoor, function (sprite, otherSprite) {
