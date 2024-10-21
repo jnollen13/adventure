@@ -423,6 +423,9 @@ statusbars.onZero(StatusBarKind.enemyhealth3, function (status) {
     mySprite6 = sprites.create(assets.image`door1`, SpriteKind.door2)
     tiles.placeOnTile(mySprite6, tiles.getTileLocation(99, 20))
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile33`, function (sprite, location) {
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(0, randint(0, 15)))
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile25`, function (sprite, location) {
     tiles.setCurrentTilemap(tilemap`level91`)
     tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 1))
@@ -827,7 +830,6 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile2`, function (sprite, l
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.dungenenemy01, function (sprite, otherSprite) {
     if (controller.B.isPressed()) {
-        let statusbar9: StatusBarSprite = null
         statusbar9.value += claw_extenders + randint(-2, -4)
     }
 })
@@ -1015,6 +1017,16 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.teleport, function (sprite, othe
     mapv += 1
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile35`, function (sprite, location) {
+    tiles.setCurrentTilemap(tilemap`level75`)
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 1))
+    mySprite4 = sprites.create(assets.image`monster3`, SpriteKind.dungenenemy01)
+    statusbar9 = statusbars.create(20, 4, StatusBarKind.doungenEhp01)
+    statusbar9.max = 33
+    statusbar9.attachToSprite(mySprite4)
+    pause(1000)
+    mySprite4.follow(mySprite, 86)
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile23`, function (sprite, location) {
     tiles.placeOnTile(mySprite, tiles.getTileLocation(randint(0, 15), randint(0, 10)))
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile14`, function (sprite, location) {
@@ -1027,6 +1039,9 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.collectibleInsignia, func
     if (controller.A.isPressed()) {
         tiles.placeOnTile(mySprite, tiles.getTileLocation(22, 32))
     }
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile30`, function (sprite, location) {
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(0, randint(0, 15)))
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.floorDark3, function (sprite, location) {
     if (controller.B.isPressed()) {
@@ -1043,6 +1058,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
         statusbar2.value += claw_extenders + randint(-2, -4)
     }
 })
+let statusbar9: StatusBarSprite = null
 let statusbar2: StatusBarSprite = null
 let statusbar3: StatusBarSprite = null
 let mySprite10: Sprite = null
