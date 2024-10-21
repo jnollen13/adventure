@@ -27,6 +27,7 @@ namespace SpriteKind {
     export const knights_door = SpriteKind.create()
     export const teleportdoor01 = SpriteKind.create()
     export const Eli = SpriteKind.create()
+    export const rikerbossfight = SpriteKind.create()
 }
 namespace StatusBarKind {
     export const enemyhealth1 = StatusBarKind.create()
@@ -38,6 +39,7 @@ namespace StatusBarKind {
     export const basicenenemyhealth1 = StatusBarKind.create()
     export const doungenEhp01 = StatusBarKind.create()
     export const gladiaterhp00 = StatusBarKind.create()
+    export const rikerhp = StatusBarKind.create()
 }
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile0`, function (sprite, location) {
     if (controller.A.isPressed()) {
@@ -163,6 +165,10 @@ statusbars.onZero(StatusBarKind.doungenEhp01, function (status) {
     tiles.setTileAt(tiles.getTileLocation(15, 7), assets.tile`myTile43`)
     tiles.setWallAt(tiles.getTileLocation(15, 7), false)
 })
+statusbars.onZero(StatusBarKind.rikerhp, function (status) {
+    sprites.destroy(mySprite11)
+    game.gameOver(true)
+})
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     mySprite.setImage(img`
         . . . . . . . . . . . . . . . . 
@@ -228,6 +234,12 @@ statusbars.onZero(StatusBarKind.Enemyhealth0, function (status) {
     mySprite8 = sprites.create(assets.image`door1`, SpriteKind.door3)
     statusbar.value += randint(3, 9)
     tiles.placeOnTile(mySprite8, tiles.getTileLocation(110, 41))
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.rikerbossfight, function (sprite, otherSprite) {
+    if (controller.B.isPressed()) {
+        statusbar11.value += randint(-1, -6) + claw_extenders
+        mainhealth.value += randint(0, 3)
+    }
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile34`, function (sprite, location) {
     tiles.setCurrentTilemap(tilemap`level61`)
@@ -576,6 +588,9 @@ statusbars.onZero(StatusBarKind.Health, function (status) {
     info.changeLifeBy(-1)
     mainhealth.value = 100
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile37`, function (sprite, location) {
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(randint(0, 15), randint(0, 10)))
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile16`, function (sprite, location) {
     mainhealth.value += -1
     tiles.setWallAt(tiles.getTileLocation(28, 10), true)
@@ -630,6 +645,9 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile40`, function (sprite, 
     mySprite3 = sprites.create(assets.image`door1`, SpriteKind.teleport)
     tiles.placeOnTile(mySprite3, tiles.getTileLocation(17, 17))
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile36`, function (sprite, location) {
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(randint(0, 15), randint(0, 10)))
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.boss_stage_1, function (sprite, otherSprite) {
     if (controller.B.isPressed()) {
         statusbar4.value += -3
@@ -674,8 +692,16 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile59`, function (sprite, 
         tiles.setTileAt(tiles.getTileLocation(24, 11), assets.tile`myTile61`)
         tiles.setTileAt(tiles.getTileLocation(40, 11), assets.tile`myTile61`)
         tiles.setTileAt(tiles.getTileLocation(47, 12), assets.tile`myTile60`)
+        tiles.setTileAt(tiles.getTileLocation(24, 12), assets.tile`myTile60`)
+        tiles.setTileAt(tiles.getTileLocation(40, 12), assets.tile`myTile60`)
+        mySprite11 = sprites.create(assets.image`riker`, SpriteKind.rikerbossfight)
         tiles.setTileAt(tiles.getTileLocation(0, 7), assets.tile`myTile58`)
         tiles.setTileAt(tiles.getTileLocation(0, 8), assets.tile`myTile58`)
+        tiles.placeOnRandomTile(mySprite11, sprites.dungeon.floorMixed)
+        statusbar11 = statusbars.create(20, 4, StatusBarKind.rikerhp)
+        statusbar11.attachToSprite(mySprite11)
+        statusbar11.max = 4096
+        mySprite11.follow(mySprite, randint(1, 100))
     }
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.villagedoor, function (sprite, otherSprite) {
@@ -801,6 +827,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile2`, function (sprite, l
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.dungenenemy01, function (sprite, otherSprite) {
     if (controller.B.isPressed()) {
+        let statusbar9: StatusBarSprite = null
         statusbar9.value += claw_extenders + randint(-2, -4)
     }
 })
@@ -834,6 +861,11 @@ sprites.onOverlap(SpriteKind.boss_stage_1, SpriteKind.Player, function (sprite, 
     pause(138)
     mainhealth.value += -2
 })
+sprites.onOverlap(SpriteKind.rikerbossfight, SpriteKind.Player, function (sprite, otherSprite) {
+    pause(randint(111, 333))
+    mainhealth.value += randint(0, -4)
+    statusbar.value += randint(0, randint(0, randint(0, randint(0, -3))))
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.door3, function (sprite, otherSprite) {
     tiles.setCurrentTilemap(tilemap`final boos stage 2`)
     tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 1))
@@ -847,6 +879,9 @@ statusbars.onZero(StatusBarKind.bosshealth2, function (status) {
     tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 0))
     mainhealth.value = 100
     info.changeLifeBy(1)
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile27`, function (sprite, location) {
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(randint(0, 15), randint(0, 10)))
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.door2, function (sprite, otherSprite) {
     sprites.destroyAllSpritesOfKind(SpriteKind.door2)
@@ -980,14 +1015,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.teleport, function (sprite, othe
     mapv += 1
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile35`, function (sprite, location) {
-    tiles.setCurrentTilemap(tilemap`level75`)
-    tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 1))
-    mySprite4 = sprites.create(assets.image`monster3`, SpriteKind.dungenenemy01)
-    statusbar9 = statusbars.create(20, 4, StatusBarKind.doungenEhp01)
-    statusbar9.max = 33
-    statusbar9.attachToSprite(mySprite4)
-    pause(1000)
-    mySprite4.follow(mySprite, 86)
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(randint(0, 15), randint(0, 10)))
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile14`, function (sprite, location) {
     if (controller.A.isPressed()) {
@@ -1007,12 +1035,14 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.floorDark3, function (spr
         tiles.placeOnTile(mySprite, tiles.getTileLocation(29, 11))
     }
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile28`, function (sprite, location) {
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(randint(0, 15), randint(0, 10)))
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     if (controller.B.isPressed()) {
         statusbar2.value += claw_extenders + randint(-2, -4)
     }
 })
-let statusbar9: StatusBarSprite = null
 let statusbar2: StatusBarSprite = null
 let statusbar3: StatusBarSprite = null
 let mySprite10: Sprite = null
@@ -1022,9 +1052,11 @@ let statusbar4: StatusBarSprite = null
 let statusbar10: StatusBarSprite = null
 let statusbar5: StatusBarSprite = null
 let statusbar8: StatusBarSprite = null
+let statusbar11: StatusBarSprite = null
 let mySprite8: Sprite = null
 let mySprite5: Sprite = null
 let statusbar7: StatusBarSprite = null
+let mySprite11: Sprite = null
 let mySprite3: Sprite = null
 let mySprite6: Sprite = null
 let mySprite9: Sprite = null
