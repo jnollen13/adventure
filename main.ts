@@ -28,6 +28,7 @@ namespace SpriteKind {
     export const teleportdoor01 = SpriteKind.create()
     export const Eli = SpriteKind.create()
     export const rikerbossfight = SpriteKind.create()
+    export const explosoin = SpriteKind.create()
 }
 namespace StatusBarKind {
     export const enemyhealth1 = StatusBarKind.create()
@@ -55,18 +56,20 @@ sprites.onOverlap(SpriteKind.enemylvl4, SpriteKind.Player, function (sprite, oth
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Charlie, function (sprite, otherSprite) {
     if (controller.A.isPressed()) {
-        if (true) {
-            game.showLongText("I love kitties.", DialogLayout.Bottom)
-            sprites.destroy(mySprite2)
-            statusbar.value += -10
-            tiles.setCurrentTilemap(tilemap`teleporter map`)
-            tiles.placeOnTile(mySprite, tiles.getTileLocation(randint(0, 16), randint(0, 16)))
-        }
+        game.showLongText("I love kitties.", DialogLayout.Bottom)
+        sprites.destroy(mySprite2)
+        statusbar.value += -10
+        tiles.setCurrentTilemap(tilemap`teleporter map`)
+        tiles.placeOnTile(mySprite, tiles.getTileLocation(randint(0, 16), randint(0, 16)))
     }
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile38`, function (sprite, location) {
     tiles.setCurrentTilemap(tilemap`level63`)
     tiles.placeOnTile(mySprite, tiles.getTileLocation(15, 1))
+})
+sprites.onOverlap(SpriteKind.rikerbossfight, SpriteKind.explosoin, function (sprite, otherSprite) {
+    sprites.destroy(mySprite12, effects.rings, 500)
+    statusbar11.value += randint(-10, -99)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.enemysightrange, function (sprite, otherSprite) {
     mySprite4.follow(mySprite, 36)
@@ -501,13 +504,6 @@ scene.onOverlapTile(SpriteKind.Player, sprites.castle.shrub, function (sprite, l
         tiles.placeOnRandomTile(mySprite, sprites.castle.shrub)
     }
 })
-controller.combos.attachCombo("AA+B", function () {
-    tiles.setCurrentTilemap(tilemap`level45`)
-    tiles.placeOnTile(mySprite, tiles.getTileLocation(6, 8))
-    claw_extenders = -698
-    statusbar.value = 333
-    info.setLife(999)
-})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.teleportdoor00, function (sprite, otherSprite) {
     tiles.setCurrentTilemap(tilemap`level38`)
     sprites.destroyAllSpritesOfKind(SpriteKind.teleportdoor00)
@@ -778,6 +774,11 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.basicenenemy, function (sprite, 
         statusbar8.value += claw_extenders + randint(-1, -5)
     }
 })
+controller.combos.attachCombo("BB+A", function () {
+    mySprite12 = sprites.create(assets.image`boom`, SpriteKind.explosoin)
+    tiles.placeOnTile(mySprite12, mySprite.tilemapLocation())
+    mySprite12.follow(mySprite)
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.door, function (sprite, otherSprite) {
     tiles.setCurrentTilemap(tilemap`forest level-1 stage-2`)
     mySprite.setPosition(0, 39)
@@ -863,6 +864,10 @@ sprites.onOverlap(SpriteKind.boss_stage_1, SpriteKind.Player, function (sprite, 
     pause(138)
     mainhealth.value += -2
 })
+sprites.onOverlap(SpriteKind.explosoin, SpriteKind.boss_stage_1, function (sprite, otherSprite) {
+    sprites.destroy(mySprite12, effects.confetti, 500)
+    statusbar4.value += -5
+})
 sprites.onOverlap(SpriteKind.rikerbossfight, SpriteKind.Player, function (sprite, otherSprite) {
     pause(randint(111, 333))
     mainhealth.value += randint(0, -4)
@@ -884,6 +889,10 @@ statusbars.onZero(StatusBarKind.bosshealth2, function (status) {
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile27`, function (sprite, location) {
     tiles.placeOnTile(mySprite, tiles.getTileLocation(randint(0, 15), randint(0, 10)))
+})
+sprites.onOverlap(SpriteKind.explosoin, SpriteKind.Enemy, function (sprite, otherSprite) {
+    sprites.destroy(mySprite12, effects.confetti, 500)
+    statusbar2.value += -6
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.door2, function (sprite, otherSprite) {
     sprites.destroyAllSpritesOfKind(SpriteKind.door2)
@@ -1068,7 +1077,6 @@ let statusbar4: StatusBarSprite = null
 let statusbar10: StatusBarSprite = null
 let statusbar5: StatusBarSprite = null
 let statusbar8: StatusBarSprite = null
-let statusbar11: StatusBarSprite = null
 let mySprite8: Sprite = null
 let mySprite5: Sprite = null
 let statusbar7: StatusBarSprite = null
@@ -1078,6 +1086,8 @@ let mySprite6: Sprite = null
 let mySprite9: Sprite = null
 let mySprite7: Sprite = null
 let mySprite4: Sprite = null
+let statusbar11: StatusBarSprite = null
+let mySprite12: Sprite = null
 let mySprite2: Sprite = null
 let mapv = 0
 let claw_extenders = 0
