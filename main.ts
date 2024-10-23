@@ -54,6 +54,10 @@ sprites.onOverlap(SpriteKind.enemylvl4, SpriteKind.Player, function (sprite, oth
     pause(200)
     mainhealth.value += -1
 })
+sprites.onOverlap(SpriteKind.explosoin, SpriteKind.basicenenemy, function (sprite, otherSprite) {
+    sprites.destroy(mySprite12)
+    statusbar8.value += -6
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Charlie, function (sprite, otherSprite) {
     if (controller.A.isPressed()) {
         game.showLongText("I love kitties.", DialogLayout.Bottom)
@@ -470,6 +474,9 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairWest, function (spri
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorClosedNorth, function (sprite, location) {
     tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 27))
+})
+sprites.onOverlap(SpriteKind.explosoin, SpriteKind.bossstage2, function (sprite, otherSprite) {
+    sprites.destroy(mySprite12, effects.rings, 500)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`blacksmiths shop`, function (sprite, location) {
     if (controller.A.isPressed()) {
@@ -1076,7 +1083,6 @@ let statusbar6: StatusBarSprite = null
 let statusbar4: StatusBarSprite = null
 let statusbar10: StatusBarSprite = null
 let statusbar5: StatusBarSprite = null
-let statusbar8: StatusBarSprite = null
 let mySprite8: Sprite = null
 let mySprite5: Sprite = null
 let statusbar7: StatusBarSprite = null
@@ -1087,8 +1093,9 @@ let mySprite9: Sprite = null
 let mySprite7: Sprite = null
 let mySprite4: Sprite = null
 let statusbar11: StatusBarSprite = null
-let mySprite12: Sprite = null
 let mySprite2: Sprite = null
+let statusbar8: StatusBarSprite = null
+let mySprite12: Sprite = null
 let mapv = 0
 let claw_extenders = 0
 let statusbar: StatusBarSprite = null
