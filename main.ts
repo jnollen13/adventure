@@ -477,6 +477,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorClosedNorth, function
 })
 sprites.onOverlap(SpriteKind.explosoin, SpriteKind.bossstage2, function (sprite, otherSprite) {
     sprites.destroy(mySprite12, effects.rings, 500)
+    statusbar7.value += -7
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`blacksmiths shop`, function (sprite, location) {
     if (controller.A.isPressed()) {
