@@ -593,7 +593,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.builtin.oceanSand9, function (spr
 })
 statusbars.onZero(StatusBarKind.Health, function (status) {
     info.changeLifeBy(-1)
-    mainhealth.value = 100
+    mainhealth.value = 99
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile37`, function (sprite, location) {
     tiles.placeOnTile(mySprite, tiles.getTileLocation(randint(0, 15), randint(0, 10)))
