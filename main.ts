@@ -323,7 +323,6 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile4`, function (sprite, l
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.swamp.swampTile3, function (sprite, location) {
     game.showLongText("get ready for a boss fight", DialogLayout.Full)
-    mySprite.y += 219
     mySprite4 = sprites.create(assets.image`monster3`, SpriteKind.boss_stage_1)
     tiles.placeOnRandomTile(mySprite4, sprites.swamp.swampTile13)
     statusbar4 = statusbars.create(20, 4, StatusBarKind.bosshealth)
@@ -332,6 +331,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.swamp.swampTile3, function (sprit
     pause(2000)
     mySprite4.follow(mySprite, 89)
     statusbar4.max = 22
+    tiles.placeOnRandomTile(mySprite, sprites.swamp.swampTile16)
 })
 sprites.onOverlap(SpriteKind.enemynormal, SpriteKind.Player, function (sprite, otherSprite) {
     pause(213)
@@ -570,6 +570,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Eli, function (sprite, otherSpri
         sprites.destroyAllSpritesOfKind(SpriteKind.Eli)
         tiles.setCurrentTilemap(tilemap`the prison`)
         tiles.placeOnTile(mySprite, tiles.getTileLocation(4, 8))
+        mainhealth.value = 99
     }
 })
 sprites.onOverlap(SpriteKind.bossstage2, SpriteKind.Player, function (sprite, otherSprite) {
@@ -667,8 +668,8 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`teleporter1`, function (sprit
     statusbar3.attachToSprite(mySprite4)
     statusbar3.value = 16
     game.splash("get ready to battle!")
-    tiles.placeOnRandomTile(mySprite, sprites.skillmap.islandTile7)
     tiles.placeOnRandomTile(mySprite4, sprites.swamp.swampTile1)
+    tiles.placeOnRandomTile(mySprite, sprites.skillmap.islandTile7)
     pause(500)
     mySprite4.follow(mySprite, 74)
     statusbar3.max = 16
@@ -708,6 +709,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile59`, function (sprite, 
         statusbar11 = statusbars.create(20, 4, StatusBarKind.rikerhp)
         statusbar11.attachToSprite(mySprite11)
         statusbar11.max = 4096
+        statusbar11.value = 4096
         mySprite11.follow(mySprite, randint(1, 100))
     }
 })
@@ -1102,6 +1104,7 @@ let claw_extenders = 0
 let statusbar: StatusBarSprite = null
 let mainhealth: StatusBarSprite = null
 let mySprite: Sprite = null
+let enemy_drops = 0
 tiles.setCurrentTilemap(tilemap`home`)
 mySprite = sprites.create(assets.image`cat`, SpriteKind.Player)
 mainhealth = statusbars.create(45, 3, StatusBarKind.Health)
@@ -1118,7 +1121,6 @@ statusbar.setColor(5, 2)
 tiles.placeOnRandomTile(mySprite, assets.tile`log`)
 claw_extenders = 0
 statusbar.max = 339
-let enemy_drops = 0
 mapv = 0
 game.onUpdate(function () {
     characterAnimations.runFrames(
