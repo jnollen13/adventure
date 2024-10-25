@@ -142,7 +142,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorOpenSouth, function (
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`blacksmiths sign`, function (sprite, location) {
     if (controller.A.isPressed()) {
-        game.showLongText("The sign says: blacksmith’s shop.", DialogLayout.Bottom)
+        game.showLongText("The sign says: blacksmith's shop.", DialogLayout.Bottom)
     }
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`Food-steps`, function (sprite, location) {
@@ -289,6 +289,10 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile13`, function (sprite, 
         tiles.setTileAt(tiles.getTileLocation(1, 31), sprites.dungeon.greenSwitchUp)
         tiles.setTileAt(tiles.getTileLocation(13, 14), sprites.dungeon.stairLadder)
     }
+})
+sprites.onOverlap(SpriteKind.explosoin, SpriteKind.enemynormal, function (sprite, otherSprite) {
+    sprites.destroy(mySprite12, effects.confetti, 500)
+    statusbar6.value += -5
 })
 sprites.onOverlap(SpriteKind.gladiater, SpriteKind.Player, function (sprite, otherSprite) {
     pause(randint(111, 333))
@@ -519,6 +523,10 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.teleportdoor00, function (sprite
     mySprite2 = sprites.create(assets.image`door1`, SpriteKind.door3)
     tiles.placeOnTile(mySprite2, tiles.getTileLocation(8, 5))
 })
+sprites.onOverlap(SpriteKind.explosoin, SpriteKind.enemylvl2, function (sprite, otherSprite) {
+    sprites.destroy(mySprite12, effects.confetti, 500)
+    statusbar3.value += -6
+})
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.purpleSwitchDown, function (sprite, location) {
     if (controller.A.isPressed()) {
         tiles.placeOnTile(mySprite, tiles.getTileLocation(6, 8))
@@ -669,7 +677,24 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`teleporter1`, function (sprit
     statusbar3.value = 16
     game.splash("get ready to battle!")
     tiles.placeOnRandomTile(mySprite4, sprites.swamp.swampTile1)
-    tiles.placeOnRandomTile(mySprite, sprites.skillmap.islandTile7)
+    tiles.placeOnRandomTile(mySprite, img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `)
     pause(500)
     mySprite4.follow(mySprite, 74)
     statusbar3.max = 16
@@ -1079,11 +1104,11 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 let statusbar9: StatusBarSprite = null
 let statusbar2: StatusBarSprite = null
-let statusbar3: StatusBarSprite = null
 let mySprite10: Sprite = null
 let seal_Hole = 0
-let statusbar6: StatusBarSprite = null
+let statusbar3: StatusBarSprite = null
 let statusbar4: StatusBarSprite = null
+let statusbar6: StatusBarSprite = null
 let statusbar10: StatusBarSprite = null
 let statusbar5: StatusBarSprite = null
 let mySprite8: Sprite = null
