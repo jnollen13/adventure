@@ -298,6 +298,10 @@ sprites.onOverlap(SpriteKind.gladiater, SpriteKind.Player, function (sprite, oth
     pause(randint(111, 333))
     mainhealth.value += -1
 })
+sprites.onOverlap(SpriteKind.explosoin, SpriteKind.enemylvl4, function (sprite, otherSprite) {
+    sprites.destroy(mySprite12, effects.confetti, 500)
+    statusbar5.value += -5
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile46`, function (sprite, location) {
     if (controller.A.isPressed()) {
         tiles.setTileAt(tiles.getTileLocation(7, 15), assets.tile`myTile53`)
