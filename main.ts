@@ -677,27 +677,10 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`teleporter1`, function (sprit
     statusbar3.value = 16
     game.splash("get ready to battle!")
     tiles.placeOnRandomTile(mySprite4, sprites.swamp.swampTile1)
-    tiles.placeOnRandomTile(mySprite, img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `)
     pause(500)
     mySprite4.follow(mySprite, 74)
     statusbar3.max = 16
+    tiles.placeOnRandomTile(mySprite, sprites.skillmap.islandTile7)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile59`, function (sprite, location) {
     if (controller.A.isPressed()) {
