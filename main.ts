@@ -407,11 +407,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.knights_door, function (sprite, 
     tiles.placeOnTile(mySprite6, tiles.getTileLocation(7, 2))
     tiles.placeOnTile(mySprite9, tiles.getTileLocation(15, 5))
 })
-scene.onOverlapTile(SpriteKind.Player, assets.tile`gold sellers sign`, function (sprite, location) {
-    if (controller.A.isPressed()) {
-        game.showLongText("The sign says: gold seller's shop.", DialogLayout.Bottom)
-    }
-})
 statusbars.onZero(StatusBarKind.enemyhealth1, function (status) {
     sprites.destroyAllSpritesOfKind(SpriteKind.enemylvl2, effects.spray, 5000)
     pause(5000)
