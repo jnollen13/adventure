@@ -743,6 +743,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.villagedoor, function (sprite, o
         f f f f f f f f f f f f f f f f 
         `, SpriteKind.knights_door)
     tiles.placeOnTile(mySprite2, tiles.getTileLocation(61, 39))
+    tiles.setWallAt(tiles.getTileLocation(52, 16), true)
 })
 statusbars.onZero(StatusBarKind.basicenenemyhealth1, function (status) {
     sprites.destroy(mySprite4)
