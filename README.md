@@ -3,6 +3,8 @@
 
 > Open this page at [https://jnollen13.github.io/adventure-game-make-code/](https://jnollen13.github.io/adventure-game-make-code/)
 
+In the first tilemap of adventure head to the grass surounded by flowers to start the game.
+
 ## Use as Extension
 
 This repository can be added as an **extension** in MakeCode.
