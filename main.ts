@@ -29,6 +29,7 @@ namespace SpriteKind {
     export const Eli = SpriteKind.create()
     export const rikerbossfight = SpriteKind.create()
     export const explosoin = SpriteKind.create()
+    export const Text = SpriteKind.create()
 }
 namespace StatusBarKind {
     export const enemyhealth1 = StatusBarKind.create()
@@ -472,6 +473,14 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.enemynormal, function (sprite, o
         mySprite4.follow(mySprite)
     }
 })
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    animation.runImageAnimation(
+    mySprite,
+    assets.animation`WL`,
+    200,
+    true
+    )
+})
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairWest, function (sprite, location) {
     tiles.placeOnTile(mySprite, tiles.getTileLocation(30, 1))
 })
@@ -510,10 +519,18 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`blacksmiths shop`, function (
         }
     }
 })
+controller.right.onEvent(ControllerButtonEvent.Released, function () {
+    animation.stopAnimation(animation.AnimationTypes.ImageAnimation, mySprite)
+    mySprite.setImage(assets.image`cat`)
+})
 scene.onOverlapTile(SpriteKind.Player, sprites.castle.shrub, function (sprite, location) {
     if (controller.A.isPressed()) {
         tiles.placeOnRandomTile(mySprite, sprites.castle.shrub)
     }
+})
+controller.left.onEvent(ControllerButtonEvent.Released, function () {
+    animation.stopAnimation(animation.AnimationTypes.ImageAnimation, mySprite)
+    mySprite.setImage(assets.image`catL`)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.teleportdoor00, function (sprite, otherSprite) {
     tiles.setCurrentTilemap(tilemap`level38`)
@@ -660,6 +677,14 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile40`, function (sprite, 
     mySprite3 = sprites.create(assets.image`door1`, SpriteKind.teleport)
     tiles.placeOnTile(mySprite3, tiles.getTileLocation(17, 17))
 })
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+    animation.runImageAnimation(
+    mySprite,
+    assets.animation`WR`,
+    200,
+    true
+    )
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile36`, function (sprite, location) {
     tiles.placeOnTile(mySprite, tiles.getTileLocation(randint(0, 15), randint(0, 10)))
 })
@@ -795,7 +820,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.basicenenemy, function (sprite, 
 controller.combos.attachCombo("BB+A", function () {
     mySprite12 = sprites.create(assets.image`boom`, SpriteKind.explosoin)
     tiles.placeOnTile(mySprite12, mySprite.tilemapLocation())
-    mySprite12.follow(mySprite)
+    mySprite12.follow(mySprite, 600)
+    mySprite12.setFlag(SpriteFlag.GhostThroughWalls, true)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.door, function (sprite, otherSprite) {
     tiles.setCurrentTilemap(tilemap`forest level-1 stage-2`)
@@ -1130,109 +1156,3 @@ tiles.placeOnRandomTile(mySprite, assets.tile`log`)
 claw_extenders = 0
 statusbar.max = 339
 mapv = 0
-game.onUpdate(function () {
-    characterAnimations.runFrames(
-    mySprite,
-    [img`
-        e e e . . . . e e e . . . . 
-        c d d c . . c d d c . . . . 
-        c b d d f f d d b c . . . . 
-        c 3 b d d b d b 3 c . . . . 
-        f b 3 d d d d 3 b f . . . . 
-        e d d d d d d d d e . . . . 
-        e d f d d d d f d e . b f b 
-        f d d f d d f d d f . f d f 
-        f b d d b b d d 2 f . f d f 
-        . f 2 2 2 2 2 2 b b f f d f 
-        . f b d d d d d d b b d b f 
-        . f d d d d d b d d f f f . 
-        . f d f f f d f f d f . . . 
-        . f f . . f f . . f f . . . 
-        `,img`
-        . . . . . . . . . . . . . . 
-        e e e . . . . e e e . . . . 
-        c d d c . . c d d c . . . . 
-        c b d d f f d d b c . . . . 
-        c 3 b d d b d b 3 c . . . . 
-        f b 3 d d d d 3 b f . . . . 
-        e d d d d d d d d e . . . . 
-        e d f d d d d f d e b f b . 
-        f d d f d d f d d f f d f . 
-        f b d d b b d d 2 b f d f . 
-        . f 2 2 2 2 2 2 d b d b f . 
-        . f d d d d d d d f f f . . 
-        . f d b d f f f d f . . . . 
-        . . f f f f . . f f . . . . 
-        `,img`
-        . . . . . . . . . . . . . . 
-        e e e . . . . e e e . . . . 
-        c d d c . . c d d c . . . . 
-        c b d d f f d d b c . . . . 
-        c 3 b d d b d b 3 c . . . . 
-        f b 3 d d d d 3 b f . . . . 
-        e d d d d d d d d e . . . . 
-        e d f d d d d f d e . b f b 
-        f d d f d d f d d f . f d f 
-        f b d d b b d d 2 b f f d f 
-        . f 2 2 2 2 2 2 d b b d b f 
-        . f d d d d d d d f f f f . 
-        . . f d b d f d f . . . . . 
-        . . . f f f f f f . . . . . 
-        `],
-    500,
-    characterAnimations.rule(controller.dx())
-    )
-})
-game.onUpdate(function () {
-    characterAnimations.runFrames(
-    mySprite,
-    [img`
-        . . . . e e e . . . . e e e 
-        . . . . c d d c . . c d d c 
-        . . . . c b d d f f d d b c 
-        . . . . c 3 b d b d d b 3 c 
-        . . . . f b 3 d d d d 3 b f 
-        . . . . e d d d d d d d d e 
-        b f b . e d f d d d d f d e 
-        f d f . f d d f d d f d d f 
-        f d f . f 2 d d b b d d b f 
-        f d f f b b 2 2 2 2 2 2 f . 
-        f b d b b d d d d d d b f . 
-        . f f f d d b d d d d d f . 
-        . . . f d f f d f f f d f . 
-        . . . f f . . f f . . f f . 
-        `,img`
-        . . . . . . . . . . . . . . 
-        . . . . e e e . . . . e e e 
-        . . . . c d d c . . c d d c 
-        . . . . c b d d f f d d b c 
-        . . . . c 3 b d b d d b 3 c 
-        . . . . f b 3 d d d d 3 b f 
-        . . . . e d d d d d d d d e 
-        . b f b e d f d d d d f d e 
-        . f d f f d d f d d f d d f 
-        . f d f b 2 d d b b d d b f 
-        . f b d b d 2 2 2 2 2 2 f . 
-        . . f f f d d d d d d d f . 
-        . . . . f d f f f d b d f . 
-        . . . . f f . . f f f f . . 
-        `,img`
-        . . . . . . . . . . . . . . 
-        . . . . e e e . . . . e e e 
-        . . . . c d d c . . c d d c 
-        . . . . c b d d f f d d b c 
-        . . . . c 3 b d b d d b 3 c 
-        . . . . f b 3 d d d d 3 b f 
-        . . . . e d d d d d d d d e 
-        b f b . e d f d d d d f d e 
-        f d f . f d d f d d f d d f 
-        f d f f b 2 d d b b d d b f 
-        f b d b b d 2 2 2 2 2 2 f . 
-        . f f f f d d d d d d d f . 
-        . . . . . f d f d b d f . . 
-        . . . . . f f f f f f . . . 
-        `],
-    500,
-    controller.dx()
-    )
-})
