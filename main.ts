@@ -1154,5 +1154,5 @@ statusbar.attachToSprite(mySprite, 6, 2)
 statusbar.setColor(5, 2)
 tiles.placeOnRandomTile(mySprite, assets.tile`log`)
 claw_extenders = 0
-statusbar.max = 339
+statusbar.max = 333
 mapv = 0
